@@ -6,19 +6,23 @@ ___
 ___
 **Steps to implement this flow:**
 
-> Get Magic downloaded and installed. You could follow the instructions on the [website of OCD(Open Circuit Design)](http://opencircuitdesign.com/magic/).
+> Get Magic downloaded and installed. 
+> You could follow the instructions on the [website of OCD(Open Circuit Design)](http://opencircuitdesign.com/magic/).
 
 - Downloading:
 
 > Stable Distribution (Magic 8.2) Source:
-In 2019, Version 8.2 has finally been declared stable enough to supplant version 8.1 as the new stable (and only) distribution. The git system has been changed to a more normal git format, with new development being done in repository branches.
+In 2019, Version 8.2 has finally been declared stable enough to supplant version 8.1 as the new stable (and only) distribution. 
+> The git system has been changed to a more normal git format, with new development being done in repository branches.
 [Download here](http://opencircuitdesign.com/magic/archive/magic-8.2.119.tgz)
 
 - System Requirements:
 
 > These comments were helpfully provided by Jason Schonberg, January 2010. Although specifically for Ubuntu Linux, they provide a good summary of the packages required on all systems. 
 > Different distributions of Linux may or may not come with all of the following packages, and missing ones will need to be installed.
-Updated October 2018. The reference to BLT has long been deprecated since most BLT functions were absorbed into the Tk distribution. > > Added the package dependency for the Cairo graphics package (for magic-8.2).
+Updated October 2018. 
+> The reference to BLT has long been deprecated since most BLT functions were absorbed into the Tk distribution. 
+> Added the package dependency for the Cairo graphics package (for magic-8.2).
 
 > In order to compile Magic on a vanilla installation of Ubuntu, the following additional packages are needed (at a minimum):
 M4 preprocessor
@@ -50,7 +54,7 @@ $ sudo apt-get install libncurses-dev
 ```
 - Installation:
 
->	Compiling and Installing Magic From Source:
+> Compiling and Installing Magic From Source:
 While it is true that most people want to install and run an executable "out-of-the-box," without worrying about compiling, it is also true that EDA tools are complicated, require a lot of care and maintenance, and usually work best when compiled from the original source code. 
 > The developers go to great lengths to make sure that the source code will compile on various systems without trouble.
 > In the current stable (8.1) and development (8.2) distributions, compile and install instructions can be found in the INSTALL file in the top-level directory of the source distribution.
@@ -116,9 +120,9 @@ Example of DEF-to-GDSII conversion script, be sure to be saved with “tcl” ex
 > Get it run with batch-mode command:
 
 ```magic -dnull -noconsole -T <$techfile> <$run_script>```
-“-dnull -noconsole” to run script in batch mode.
-“-T <$techfile>“ is to specify the technology file name (without extension “.tech)
-“<$run_script>” is a TCL script which includes all commands for magic to run.
+- “-dnull -noconsole” to run script in batch mode.
+- “-T <$techfile>“ is to specify the technology file name (without extension “.tech)
+- “<$run_script>” is a TCL script which includes all commands for magic to run.
 ___
 
 **Pitfalls & Troubleshootings:**
