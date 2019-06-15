@@ -2,7 +2,7 @@
 ___
 ### **Introduction:**
 
-  This is an instruction of DEF-to-GDS conversion flow with [Magic VLSI layout tool](http://opencircuitdesign.com/magic/), the goal is to convert placed and/or routed DEF files into GDSII files which could be used to tape-out. 
+  This is an instruction of DEF-to-GDS conversion flow with [Magic VLSI layout tool](http://opencircuitdesign.com/magic/), the goal is to convert placed and/or routed DEF files into GDSII files which could be used for tape-out. 
 ___
 ### **Steps to implement this flow:**
 
