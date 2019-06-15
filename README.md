@@ -24,30 +24,34 @@ Updated October 2018.
   Added the package dependency for the Cairo graphics package (for magic-8.2).
 
   In order to compile Magic on a vanilla installation of Ubuntu, the following additional packages are needed (at a minimum):
-M4 preprocessor
+
+**M4 preprocessor**
 ```
 $ sudo apt-get install m4
 ```
-tcsh shell
+**tcsh shell**
 ```
 $ sudo apt-get install tcsh
 ```
-Xlib.h
+**Xlib.h**
 ```
 $ sudo apt-get install libx11-dev
 ```
   If you wish to have the Tcl/Tk wrapper around magic (recommended) you will need to install the Tcl/Tk libraries. Version 8.5 or higher is highly recommended.
-Tcl/Tk
+
+**Tcl/Tk**
 ```
 $ sudo apt-get install tcl-dev tk-dev
 ```
   The best graphics for Magic is the OpenGL interface ("magic -d OGL"), but since that is problematic for off-screen rendering on many systems, a good alternative is the Cairo graphics interface ("magic -d XR"). This is optional, but if you want to use it, you need the Cairo library development package:
-Cairo
+
+**Cairo**
 ```
 $ sudo apt-get install libcairo2-dev
 ```
   For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
-ncurses
+
+**ncurses**
 ```
 $ sudo apt-get install libncurses-dev
 ```
@@ -65,39 +69,39 @@ ___
 ### **Prepare technology file**
   With at least sections of the following, for more details please read the [manual](http://opencircuitdesign.com/magic/techref/maint2.html), as well there are several examples of technology files you could find on Magic website [link](http://opencircuitdesign.com/magic/tech.html):
 
-- Tech:
+- **Tech:**
   Magic stores the technology of a cell in the cell's file on disk. When reading a cell back in to Magic from disk, the cell's technology must match the name of the current technology, which appears as a single word in the tech section of the technology file.
 
-- Planes:
+- **Planes:**
   The planes section of the technology file specifies how many planes will be used to store tiles in a given technology, and gives each plane a name. Each line in this section defines a plane by giving a comma-separated list of the names by which it is known.
 
-- Types:
+- **Types:**
   The types section identifies the technology-specific tile types used by Magic. 
 
-- Contact:
+- **Contact:**
   The contact section lets Magic know which types are contacts, and the planes 
 and component types to which they are connected.
 
-- Styles:
+- **Styles:**
   Magic can be run on several different types of graphical displays. Although it would have been possible to incorporate display-specific information into the technology file, a different technology file would have been required for each display type. Instead, the technology file gives one or more display-independent styles for each type that is to be displayed, and uses a per-display-type styles file to map to colors and stipplings specific to the display being used.
 
-- cifinput:
+- **cifinput:**
   In addition to writing CIF, Magic can also read in CIF files using the cif read file command. The cifinput section of the technology file describes how to convert from CIF mask layers to Magic tile types. In addition, it provides information to the Calma reader to allow it to read in Calma GDS II Stream format files. The cifinput section is very similar to the cifoutput section.
 
-- cifoutput:
+- **cifoutput:**
   The layers stored by Magic do not always correspond to physical mask layers. For example, there is no physical layer corresponding to (the scmos technology file layer) ntransistor; instead, the actual circuit must be built up by overlapping poly and diffusion over pwell. When writing CIF (Caltech Intermediate Form) or Calma GDS-II files, Magic generates the actual geometries that will appear on the masks used to fabricate the circuit. The cifoutput section of the technology file describes how to generate mask layers from Magic's abstract layers.
 
-- Extract:
+- **Extract:**
   The extract section of a technology file contains the parameters used by Magic's circuit extractor. Each line in this section begins with a keyword that determines the interpretation of the remainder of the line.
 
-- Lef:
+- **Lef:**
   This section defines a mapping between magic layers and layers that may be found in LEF and DEF format files. Without the section, magic cannot read a LEF or DEF file. The LEF and DEF layer declarations are usually simple and straightforward (as they typically define metal layers only), so often it will suffice to insert a plain vanilla lef section into a technology file if one is missing. 
 ___
 
 ### **Prepare TCL file:**
   It reads in DEF, tech LEF, macro LEF, standard cell GDSII, specify topcell, output GDSII file name. 
 
-Example of DEF-to-GDSII conversion script, be sure to be saved with “tcl” extension:
+Example of DEF-to-GDSII conversion script, ** **be sure to be saved with “tcl” extension** **:
 ```
 ###############################
     box 0 0 0 0
@@ -127,15 +131,19 @@ ___
 ### **Pitfalls & Troubleshootings:**
 
 - Cannot find standard cell GDSII in PDK folders.
+
 Solution: Normally these GDSII files are named with extension “gds2” instead of “gds”.
 
 - Technology file setup incomplete.
+
 Solution:  Please follow the rules, essential sections and syntax on the website. With at least sections from aforementioned items in “Steps to implement this flow - section 2”.
 
 - Wrong order of “gds read” and “def read” 
+
 Solution:  Place “gds read” before “def read” in order not to merge all standard cells into top level of GDSII.
 
 - Read all corners LEFs and GDSIIs
+
 Solution:  Only all VT GDSII files should be read in and tech LEF.
 
 ___
