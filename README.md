@@ -132,19 +132,19 @@ ___
 
 - Cannot find standard cell GDSII in PDK folders.
 
-Solution: Normally these GDSII files are named with extension “gds2” instead of “gds”.
+  - Solution: Normally these GDSII files are named with extension “gds2” instead of “gds”.
 
 - Technology file setup incomplete.
 
-Solution:  Please follow the rules, essential sections and syntax on the website. With at least sections from aforementioned items in “Steps to implement this flow - section 2”.
+  - Solution:  Please follow the rules, essential sections and syntax on the website. With at least sections from aforementioned items in “Steps to implement this flow - section 2”.
 
 - Wrong order of “gds read” and “def read” 
 
-Solution:  Place “gds read” before “def read” in order not to merge all standard cells into top level of GDSII.
+  - Solution:  Place “gds read” before “def read” in order not to merge all standard cells into top level of GDSII.
 
 - Read all corners LEFs and GDSIIs
 
-Solution:  Only all VT GDSII files should be read in and tech LEF.
+  - Solution:  Only all VT GDSII files should be read in and tech LEF.
 
 ___
 ### **Testing result:**
