@@ -46,17 +46,17 @@ Cairo
 ```
 $ sudo apt-get install libcairo2-dev
 ```
-> For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
+  For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
 ncurses
 ```
 $ sudo apt-get install libncurses-dev
 ```
 - Installation:
 
-> Compiling and Installing Magic From Source:
+  Compiling and Installing Magic From Source:
 While it is true that most people want to install and run an executable "out-of-the-box," without worrying about compiling, it is also true that EDA tools are complicated, require a lot of care and maintenance, and usually work best when compiled from the original source code. 
-> The developers go to great lengths to make sure that the source code will compile on various systems without trouble.
-> In the current stable (8.1) and development (8.2) distributions, compile and install instructions can be found in the INSTALL file in the top-level directory of the source distribution.
+  The developers go to great lengths to make sure that the source code will compile on various systems without trouble.
+  In the current stable (8.1) and development (8.2) distributions, compile and install instructions can be found in the INSTALL file in the top-level directory of the source distribution.
 
   In releases prior to 7.4, see the file README.Tcl in the source distribution for complete instructions on compiling the Tcl/Tk-based version of magic.
 	[Installation instructions](http://opencircuitdesign.com/magic/install.html).
