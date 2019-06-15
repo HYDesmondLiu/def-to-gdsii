@@ -1,4 +1,4 @@
-# Magic VLSI layout tool def-to-gdsii flow
+# Magic VLSI layout tool DEF-to-GDSII flow
 ___
 ### **Introduction:**
 
