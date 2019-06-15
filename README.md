@@ -1,10 +1,10 @@
 # Magic VLSI layout tool def-to-gdsii flow
 ___
-**Introduction:**
+### **Introduction:**
 
-> This is an instruction of DEF-to-GDS conversion flow with [Magic VLSI layout tool](http://opencircuitdesign.com/magic/), the goal is to convert placed and/or routed DEF files into GDSII files which could be used to tape-out. 
+ This is an instruction of DEF-to-GDS conversion flow with [Magic VLSI layout tool](http://opencircuitdesign.com/magic/), the goal is to convert placed and/or routed DEF files into GDSII files which could be used to tape-out. 
 ___
-**Steps to implement this flow:**
+### **Steps to implement this flow:**
 
 > Get Magic downloaded and installed. 
 > You could follow the instructions on the [website of OCD(Open Circuit Design)](http://opencircuitdesign.com/magic/).
@@ -63,7 +63,7 @@ While it is true that most people want to install and run an executable "out-of-
 	[Installation instructions](http://opencircuitdesign.com/magic/install.html).
 
 ___
-**Prepare technology file**
+### **Prepare technology file**
 > With at least sections of the following, for more details please read the [manual](http://opencircuitdesign.com/magic/techref/maint2.html), as well there are several examples of technology files you could find on Magic website [link](http://opencircuitdesign.com/magic/tech.html):
 
 - Tech:
@@ -95,7 +95,7 @@ and component types to which they are connected.
 	This section defines a mapping between magic layers and layers that may be found in LEF and DEF format files. Without the section, magic cannot read a LEF or DEF file. The LEF and DEF layer declarations are usually simple and straightforward (as they typically define metal layers only), so often it will suffice to insert a plain vanilla lef section into a technology file if one is missing. 
 ___
 
-**Prepare TCL file:**
+### **Prepare TCL file:**
 > It reads in DEF, tech LEF, macro LEF, standard cell GDSII, specify topcell, output GDSII file name. 
 
 Example of DEF-to-GDSII conversion script, be sure to be saved with “tcl” extension:
@@ -125,7 +125,7 @@ Example of DEF-to-GDSII conversion script, be sure to be saved with “tcl” ex
 - “<$run_script>” is a TCL script which includes all commands for magic to run.
 ___
 
-**Pitfalls & Troubleshootings:**
+### **Pitfalls & Troubleshootings:**
 
 - Cannot find standard cell GDSII in PDK folders.
 Solution: Normally these GDSII files are named with extension “gds2” instead of “gds”.
@@ -140,7 +140,7 @@ Solution:  Place “gds read” before “def read” in order not to merge all 
 Solution:  Only all VT GDSII files should be read in and tech LEF.
 
 ___
-**Testing result:**
+### **Testing result:**
 
 06.06.2019
 
