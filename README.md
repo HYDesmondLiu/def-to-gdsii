@@ -101,7 +101,7 @@ ___
 ### **Prepare TCL file:**
   It reads in DEF, tech LEF, macro LEF, standard cell GDSII, specify topcell, output GDSII file name. 
 
-Example of DEF-to-GDSII conversion script, ** **be sure to be saved with “tcl” extension** **:
+Example of DEF-to-GDSII conversion script, ** **_be sure to be saved with “tcl” extension_** **:
 ```
 ###############################
     box 0 0 0 0
