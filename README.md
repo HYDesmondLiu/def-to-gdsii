@@ -165,4 +165,4 @@ DARPA OpenROAD Cadre flow. (with 9T/12T, LVT, HVT, and RVT cell libraries and GD
 ___
 ### **Acknowledgement:**
 
-- Thanks so much for Tim Edward's efforts on supporting this task with his knowledge and 
+- Thanks so much for Tim Edward's efforts on supporting this task.
